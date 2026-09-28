@@ -1,0 +1,302 @@
+[
+  {
+    "id": "inline-edit",
+    "category": "editor",
+    "categoryLabel": "Editor Modality",
+    "winKeys": ["Ctrl", "I"],
+    "macKeys": ["⌘", "I"],
+    "action": "Trigger Inline AI Command / Refactor",
+    "description": "Opens the instructive inline editing modal directly over highlighted code or generates net-new code at cursor.",
+    "rationale": "Ctrl+I (Cmd+I) is the primary inline instruction shortcut in Antigravity for localized, in-place edits and refactoring."
+  },
+  {
+    "id": "tab-complete",
+    "category": "editor",
+    "categoryLabel": "Editor Modality",
+    "winKeys": ["Tab"],
+    "macKeys": ["Tab"],
+    "action": "Accept Autocomplete / Supercomplete Diff",
+    "description": "Accepts full inline AI code suggestion, navigates to the predicted jump point, or auto-inserts missing imports.",
+    "rationale": "Tab routes next-intent prediction: autocomplete suggestions, larger Supercomplete diffs, and Tab-to-Jump navigation."
+  },
+  {
+    "id": "tab-word-accept",
+    "category": "editor",
+    "categoryLabel": "Editor Modality",
+    "winKeys": ["Ctrl", "→"],
+    "macKeys": ["⌘", "→"],
+    "action": "Accept Autocomplete Suggestion Word-by-Word",
+    "description": "Partially accepts an inline suggestion token by token instead of committing the entire multi-line block.",
+    "rationale": "Use Ctrl+Right Arrow (Cmd+Right Arrow) when you only want the beginning of an AI completion."
+  },
+  {
+    "id": "dismiss-prompt",
+    "category": "editor",
+    "categoryLabel": "Editor Modality",
+    "winKeys": ["Esc"],
+    "macKeys": ["Esc"],
+    "action": "Dismiss Autocomplete / Close Inline Modal",
+    "description": "Cancels current active AI autocomplete suggestion or closes the active inline command dialog.",
+    "rationale": "Escape universally dismisses transient AI overlays, floating supercomplete widgets, and inline edit inputs."
+  },
+  {
+    "id": "code-lenses",
+    "category": "editor",
+    "categoryLabel": "Editor Canvas",
+    "winKeys": ["Code", "Lens"],
+    "macKeys": ["Code", "Lens"],
+    "action": "Trigger Target Actions via Inline Code Lenses",
+    "description": "Clickable action buttons appearing above functions and classes for instant 'Explain', 'Refactor', or 'Write Tests'.",
+    "rationale": "Code Lenses are contextual in-editor triggers placed directly above code symbols for one-click agent operations."
+  },
+  {
+    "id": "diff-overlay",
+    "category": "editor",
+    "categoryLabel": "Editor Canvas",
+    "winKeys": ["Alt", "F5"],
+    "macKeys": ["⌥", "F5"],
+    "action": "Navigate to Next Diff Chunk in Agent Review",
+    "description": "Jumps between proposed additions/deletions in the inline red/green visual diff review overlay.",
+    "rationale": "Visual Diff Overlays inside the editor canvas let you inspect, jump between chunks, and selectively accept changes."
+  },
+  {
+    "id": "open-chat",
+    "category": "chat",
+    "categoryLabel": "Agent Chat & Canvas",
+    "winKeys": ["Ctrl", "L"],
+    "macKeys": ["⌘", "L"],
+    "action": "Open / Focus Sidebar Agent Chat",
+    "description": "Focuses the primary Antigravity chat input pane to ask architectural questions, review code, or delegate tasks.",
+    "rationale": "Ctrl+L (Cmd+L) immediately toggles or places your cursor inside the agent conversation panel."
+  },
+  {
+    "id": "new-chat",
+    "category": "chat",
+    "categoryLabel": "Agent Chat & Canvas",
+    "winKeys": ["Ctrl", "N"],
+    "macKeys": ["⌘", "N"],
+    "action": "Start a New Chat Session / Conversation",
+    "description": "Wipes conversational state and spins up a pristine, fresh context window for a brand-new task or inquiry.",
+    "rationale": "Ctrl+N (Cmd+N) creates an isolated conversation branch, keeping context clean and tokens focused."
+  },
+  {
+    "id": "toggle-aux",
+    "category": "aux",
+    "categoryLabel": "Auxiliary Pane",
+    "winKeys": ["Ctrl", "Shift", "L"],
+    "macKeys": ["⌘", "Shift", "L"],
+    "action": "Toggle Agent Auxiliary Pane (Artifacts & Tasks)",
+    "description": "Expands or collapses the side panel displaying active background subagents, task logs, terminals, and artifacts.",
+    "rationale": "Ctrl+Shift+L (Cmd+Shift+L) opens the auxiliary sidecar where background jobs and artifact reports reside."
+  },
+  {
+    "id": "slash-plan",
+    "category": "slash",
+    "categoryLabel": "Slash Commands",
+    "winKeys": ["/plan"],
+    "macKeys": ["/plan"],
+    "action": "Activate Planning Mode (Mandatory Design Review)",
+    "description": "Instructs the agent to pause, draft an implementation plan artifact, and await user approval before editing files.",
+    "rationale": "/plan is the command to ensure deep architectural alignment and plan approval before writing code."
+  },
+  {
+    "id": "slash-goal",
+    "category": "slash",
+    "categoryLabel": "Slash Commands",
+    "winKeys": ["/goal"],
+    "macKeys": ["/goal"],
+    "action": "Launch Autonomous Goal Mode",
+    "description": "Directs the agent to run continuously in an autonomous loop until the objective is 100% verified and achieved.",
+    "rationale": "/goal triggers long-running autonomous execution without premature stoppage or unnecessary check-ins."
+  },
+  {
+    "id": "slash-schedule",
+    "category": "slash",
+    "categoryLabel": "Slash Commands",
+    "winKeys": ["/schedule"],
+    "macKeys": ["/schedule"],
+    "action": "Set Recurring Cron Job or Delayed Timer",
+    "description": "Schedules a one-shot notification timer or 5-field cron expression to monitor deployments or run routines.",
+    "rationale": "/schedule configures background recurring heartbeats or reminders for the agent."
+  },
+  {
+    "id": "slash-grill-me",
+    "category": "slash",
+    "categoryLabel": "Slash Commands",
+    "winKeys": ["/grill-me"],
+    "macKeys": ["/grill-me"],
+    "action": "Interactive Design & Architecture Interview",
+    "description": "Causes the agent to aggressively interview the developer with targeted questions to resolve ambiguities.",
+    "rationale": "/grill-me is used when you want the agent to interrogate you on trade-offs before locking in a spec."
+  },
+  {
+    "id": "slash-learn",
+    "category": "slash",
+    "categoryLabel": "Slash Commands",
+    "winKeys": ["/learn"],
+    "macKeys": ["/learn"],
+    "action": "Capture & Persist Solution to Custom Rules",
+    "description": "Distills a newly discovered debugging fix or workflow resolution into permanent workspace rules or skills.",
+    "rationale": "/learn tells the agent to extract the lesson from the current trajectory and persist it for future sessions."
+  },
+  {
+    "id": "slash-clear",
+    "category": "slash",
+    "categoryLabel": "Slash Commands",
+    "winKeys": ["/clear"],
+    "macKeys": ["/clear"],
+    "action": "Reset / Clear Chat Viewport",
+    "description": "Clears visual transcript clutter from the active chat panel while maintaining agent trajectory memory.",
+    "rationale": "/clear resets the visual chat interface for a tidy workspace."
+  },
+  {
+    "id": "mention-menu",
+    "category": "context",
+    "categoryLabel": "Context & Mentions",
+    "winKeys": ["@"],
+    "macKeys": ["@"],
+    "action": "Open Context Mention Menu",
+    "description": "Pulls up the contextual attachment picker to reference files, symbols, docs, terminals, and subagents.",
+    "rationale": "Typing @ anywhere in prompt input opens the context ingestion popup."
+  },
+  {
+    "id": "mention-file",
+    "category": "context",
+    "categoryLabel": "Context & Mentions",
+    "winKeys": ["@", "File"],
+    "macKeys": ["@", "File"],
+    "action": "Attach Specific File Context to Prompt",
+    "description": "Feeds the exact contents and path of a local project file directly into the model's context window.",
+    "rationale": "@file (or @<filename>) pins a specific file as ground truth for code generation."
+  },
+  {
+    "id": "mention-mcp",
+    "category": "context",
+    "categoryLabel": "Context & Mentions",
+    "winKeys": ["@", "Tool"],
+    "macKeys": ["@", "Tool"],
+    "action": "Reference Model Context Protocol (MCP) Tool",
+    "description": "Explicitly binds an external MCP server capability or resource into the agent invocation.",
+    "rationale": "@tool or @mcp directs the model to prioritize a registered MCP extension."
+  },
+  {
+    "id": "mention-terminal",
+    "category": "context",
+    "categoryLabel": "Context & Mentions",
+    "winKeys": ["@", "Terminal"],
+    "macKeys": ["@", "Terminal"],
+    "action": "Attach Active Terminal Output to Context",
+    "description": "Captures standard output, error traces, and active logs from the integrated terminal directly into prompt.",
+    "rationale": "@terminal allows the AI to immediately see error stacks without manual copy-pasting."
+  },
+  {
+    "id": "cli-launch",
+    "category": "cli",
+    "categoryLabel": "Antigravity CLI",
+    "winKeys": ["agy"],
+    "macKeys": ["agy"],
+    "action": "Launch Antigravity CLI Terminal Interface",
+    "description": "Spins up the interactive terminal-based Antigravity developer shell from bash, PowerShell, or zsh.",
+    "rationale": "The 'agy' binary command is the core terminal executable for headless or shell-based agent workflows."
+  },
+  {
+    "id": "cli-exit-key",
+    "category": "cli",
+    "categoryLabel": "Antigravity CLI",
+    "winKeys": ["Ctrl+D", "Ctrl+D"],
+    "macKeys": ["Ctrl+D", "Ctrl+D"],
+    "action": "Fast Double-Keystroke Exit from CLI",
+    "description": "Immediately and cleanly disconnects from the interactive CLI session back to standard terminal prompt.",
+    "rationale": "Double Ctrl+D is the universal fast terminal escape sequence in the agy CLI."
+  },
+  {
+    "id": "cli-exit-cmd",
+    "category": "cli",
+    "categoryLabel": "Antigravity CLI",
+    "winKeys": ["/exit"],
+    "macKeys": ["/exit"],
+    "action": "Text Command to Terminate CLI Session",
+    "description": "Gracefully quits the agy command-line environment and saves execution state.",
+    "rationale": "Typing /exit or /quit inside agy terminal cleanly exits the session."
+  },
+  {
+    "id": "cli-help",
+    "category": "cli",
+    "categoryLabel": "Antigravity CLI",
+    "winKeys": ["agy", "--help"],
+    "macKeys": ["agy", "--help"],
+    "action": "Display All CLI Subcommands and Flags",
+    "description": "Prints full usage syntax, subcommands, model flags, and customization options for the Antigravity CLI.",
+    "rationale": "agy --help lists all available options, parameters, and global commands."
+  },
+  {
+    "id": "toggle-terminal",
+    "category": "editor",
+    "categoryLabel": "Editor Canvas",
+    "winKeys": ["Ctrl", "`"],
+    "macKeys": ["⌘", "`"],
+    "action": "Toggle Integrated Terminal",
+    "description": "Toggles the bottom integrated PowerShell, Command Prompt, or bash terminal panel inside the IDE.",
+    "rationale": "Ctrl+` (Cmd+`) is the standard shortcut to show or hide the terminal pane."
+  },
+  {
+    "id": "quick-open",
+    "category": "editor",
+    "categoryLabel": "Editor Canvas",
+    "winKeys": ["Ctrl", "P"],
+    "macKeys": ["⌘", "P"],
+    "action": "Quick Open File Search",
+    "description": "Instantly searches and opens any file across the workspace by typing its relative name or fuzzy match.",
+    "rationale": "Ctrl+P (Cmd+P) launches fuzzy file finder navigation."
+  },
+  {
+    "id": "cmd-palette",
+    "category": "editor",
+    "categoryLabel": "Editor Canvas",
+    "winKeys": ["Ctrl", "Shift", "P"],
+    "macKeys": ["⌘", "Shift", "P"],
+    "action": "Open Full Command Palette",
+    "description": "Accesses every IDE command, agent setting, extension action, and configuration option.",
+    "rationale": "Ctrl+Shift+P (Cmd+Shift+P) launches the universal Command Palette."
+  },
+  {
+    "id": "split-editor",
+    "category": "editor",
+    "categoryLabel": "Editor Canvas",
+    "winKeys": ["Ctrl", "\\"],
+    "macKeys": ["⌘", "\\"],
+    "action": "Split Editor Pane Side-by-Side",
+    "description": "Divides active editor into two horizontal or vertical columns for comparative viewing and coding.",
+    "rationale": "Ctrl+\\ (Cmd+\\) splits the editor layout into multiple active panes."
+  },
+  {
+    "id": "toggle-sidebar",
+    "category": "editor",
+    "categoryLabel": "Editor Canvas",
+    "winKeys": ["Ctrl", "B"],
+    "macKeys": ["⌘", "B"],
+    "action": "Toggle Primary Sidebar",
+    "description": "Shows or hides the main left navigation bar (File Explorer, Git Source Control, Extensions).",
+    "rationale": "Ctrl+B (Cmd+B) maximizes editor workspace by toggling the primary sidebar."
+  },
+  {
+    "id": "global-search",
+    "category": "editor",
+    "categoryLabel": "Editor Canvas",
+    "winKeys": ["Ctrl", "Shift", "F"],
+    "macKeys": ["⌘", "Shift", "F"],
+    "action": "Global Workspace Search",
+    "description": "Performs regex or literal text pattern search across every indexed file and folder in the project.",
+    "rationale": "Ctrl+Shift+F (Cmd+Shift+F) opens the global search and replace drawer."
+  },
+  {
+    "id": "jump-definition",
+    "category": "editor",
+    "categoryLabel": "Editor Canvas",
+    "winKeys": ["F12"],
+    "macKeys": ["F12"],
+    "action": "Go to Symbol Definition",
+    "description": "Immediately navigates the active editor directly to where a function, variable, or class is declared.",
+    "rationale": "F12 jumps directly to source definition across the language server."
+  }
+]

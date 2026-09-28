@@ -1,0 +1,1905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antigravity Shortcuts Mastery | Interactive MCQ Quiz</title>
+  <meta name="theme-color" content="#6366F1">
+  <link rel="manifest" href="manifest.json">
+  <meta name="description" content="Master all Google Antigravity keyboard shortcuts, slash commands, and CLI operations with interactive, spaced-repetition MCQ quizzes and instant NotebookLM-style visual feedback.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #07090E;
+      --bg-surface: #0E131F;
+      --bg-card: rgba(18, 24, 38, 0.75);
+      --bg-card-hover: rgba(26, 35, 56, 0.85);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-strong: rgba(255, 255, 255, 0.16);
+      
+      --accent-indigo: #6366F1;
+      --accent-indigo-glow: rgba(99, 102, 241, 0.35);
+      --accent-cyan: #06B6D4;
+      
+      --correct-green: #10B981;
+      --correct-green-light: #34D399;
+      --correct-glow: rgba(16, 185, 129, 0.25);
+      --correct-border: #059669;
+      --correct-bg: rgba(6, 78, 59, 0.45);
+      
+      --wrong-red: #EF4444;
+      --wrong-glow: rgba(239, 68, 68, 0.25);
+      --wrong-border: #DC2626;
+      --wrong-bg: rgba(127, 29, 29, 0.35);
+      
+      --text-main: #F3F4F6;
+      --text-muted: #94A3B8;
+      --text-dim: #64748B;
+      
+      --keycap-bg: linear-gradient(180deg, #2D3748 0%, #1A202C 100%);
+      --keycap-border: #4A5568;
+      --keycap-shadow: 0 4px 0 #0F172A, 0 5px 6px rgba(0, 0, 0, 0.4);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(at 10% 15%, rgba(99, 102, 241, 0.12) 0px, transparent 45%),
+        radial-gradient(at 90% 85%, rgba(6, 182, 212, 0.08) 0px, transparent 40%),
+        radial-gradient(at 50% 50%, rgba(16, 185, 129, 0.04) 0px, transparent 60%);
+      background-attachment: fixed;
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px 60px;
+    }
+
+    /* Container */
+    .app-container {
+      width: 100%;
+      max-width: 860px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Header Bar */
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 24px;
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, #4F46E5, #06B6D4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 16px var(--accent-indigo-glow);
+    }
+
+    .brand-icon svg {
+      width: 22px;
+      height: 22px;
+      fill: #ffffff;
+    }
+
+    .brand-title h1 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(90deg, #FFFFFF, #CBD5E1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-title p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Platform Switcher & Action Buttons */
+    .btn-toggle-group {
+      display: flex;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      padding: 3px;
+    }
+
+    .toggle-option {
+      border: none;
+      background: transparent;
+      color: var(--text-dim);
+      padding: 6px 14px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .toggle-option.active {
+      background: var(--accent-indigo);
+      color: #ffffff;
+      box-shadow: 0 2px 8px var(--accent-indigo-glow);
+    }
+
+    .icon-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      padding: 8px 12px;
+      border-radius: var(--radius-md);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .icon-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--border-strong);
+      transform: translateY(-1px);
+    }
+
+    /* Stats HUD Bar */
+    .stats-hud {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .stat-pill {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-pill::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--border-subtle), transparent);
+    }
+
+    .stat-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-dim);
+      font-weight: 700;
+    }
+
+    .stat-value {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-main);
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .streak-fire {
+      color: #F59E0B;
+      filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.5));
+    }
+
+    /* Category Filter Carousel */
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+    }
+
+    .filter-bar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .filter-chip {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-chip:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-main);
+    }
+
+    .filter-chip.active {
+      background: var(--text-main);
+      color: var(--bg-dark);
+      border-color: var(--text-main);
+      font-weight: 700;
+      box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+    }
+
+    /* Main Quiz Card */
+    .quiz-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+      position: relative;
+      transition: border-color 0.3s ease;
+    }
+
+    /* Progress Track */
+    .progress-track {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #4F46E5, #10B981);
+      border-radius: var(--radius-full);
+      transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Question Header */
+    .question-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .category-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      color: #A5B4FC;
+    }
+
+    .question-counter {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Question Prompt */
+    .question-prompt {
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.45;
+      color: #FFFFFF;
+      letter-spacing: -0.015em;
+    }
+
+    /* Tactile 3D Keycap Styling */
+    kbd.tactile-key {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--keycap-bg);
+      border: 1px solid var(--keycap-border);
+      border-bottom: 2px solid #1E293B;
+      color: #F8FAFC;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      min-width: 32px;
+      height: 36px;
+      border-radius: 6px;
+      box-shadow: var(--keycap-shadow);
+      margin: 0 3px;
+      vertical-align: middle;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+      transform: translateY(-1px);
+    }
+
+    .keys-showcase {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      padding: 16px;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      margin: 4px 0;
+    }
+
+    .keys-plus {
+      color: var(--text-dim);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    /* MCQ Option Grid */
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .option-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      text-align: left;
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.98rem;
+      font-weight: 500;
+      line-height: 1.4;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      position: relative;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .option-btn:hover:not(:disabled) {
+      background: var(--bg-card-hover);
+      border-color: var(--border-strong);
+      transform: translateX(4px);
+    }
+
+    .option-btn:active:not(:disabled) {
+      transform: scale(0.99);
+    }
+
+    .option-content {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex: 1;
+    }
+
+    .option-letter {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+
+    .option-text {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .option-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: scale(0.5);
+      transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      flex-shrink: 0;
+    }
+
+    /* ========================================= */
+    /* NOTEBOOKLM STYLE INSTANT FEEDBACK STATES  */
+    /* ========================================= */
+
+    /* Correct Selected */
+    .option-btn.state-correct {
+      background: var(--correct-bg) !important;
+      border-color: var(--correct-green) !important;
+      box-shadow: 0 0 20px var(--correct-glow) !important;
+      color: #ECFDF5 !important;
+      font-weight: 700;
+    }
+
+    .option-btn.state-correct .option-letter {
+      background: var(--correct-green);
+      color: #064E3B;
+      border-color: var(--correct-green-light);
+    }
+
+    .option-btn.state-correct .option-icon {
+      opacity: 1;
+      transform: scale(1);
+      background: var(--correct-green);
+      color: #064E3B;
+    }
+
+    /* Wrong Selected */
+    .option-btn.state-wrong {
+      background: var(--wrong-bg) !important;
+      border-color: var(--wrong-red) !important;
+      box-shadow: 0 0 20px var(--wrong-glow) !important;
+      animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    }
+
+    .option-btn.state-wrong .option-letter {
+      background: var(--wrong-red);
+      color: #450A0A;
+      border-color: var(--wrong-red);
+    }
+
+    .option-btn.state-wrong .option-icon {
+      opacity: 1;
+      transform: scale(1);
+      background: var(--wrong-red);
+      color: #ffffff;
+    }
+
+    /* THE INSTANT REVEAL: NotebookLM Glowing Green Choice */
+    .option-btn.state-reveal-correct {
+      background: rgba(6, 78, 59, 0.3) !important;
+      border: 2px solid var(--correct-green) !important;
+      box-shadow: 0 0 25px var(--correct-glow), inset 0 0 15px rgba(16, 185, 129, 0.1) !important;
+      color: var(--correct-green-light) !important;
+      font-weight: 700 !important;
+      transform: scale(1.01);
+    }
+
+    .option-btn.state-reveal-correct .option-letter {
+      background: var(--correct-green) !important;
+      color: #022C22 !important;
+      border-color: var(--correct-green-light) !important;
+      font-weight: 800;
+    }
+
+    .option-btn.state-reveal-correct .option-icon {
+      opacity: 1 !important;
+      transform: scale(1) !important;
+      background: var(--correct-green) !important;
+      color: #022C22 !important;
+    }
+
+    .option-btn.dimmed {
+      opacity: 0.35;
+      filter: grayscale(0.5);
+    }
+
+    @keyframes shake {
+      10%, 90% { transform: translate3d(-2px, 0, 0); }
+      20%, 80% { transform: translate3d(4px, 0, 0); }
+      30%, 50%, 70% { transform: translate3d(-6px, 0, 0); }
+      40%, 60% { transform: translate3d(6px, 0, 0); }
+    }
+
+    /* Rationale / Explanation Card */
+    .explanation-card {
+      display: none;
+      background: rgba(15, 23, 42, 0.7);
+      border-left: 4px solid var(--accent-indigo);
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #E2E8F0;
+      animation: fadeIn 0.3s ease forwards;
+    }
+
+    .explanation-card.show {
+      display: block;
+    }
+
+    .explanation-card.correct-expl {
+      border-left-color: var(--correct-green);
+      background: rgba(6, 78, 59, 0.2);
+    }
+
+    .explanation-card.wrong-expl {
+      border-left-color: var(--correct-green);
+      background: rgba(15, 23, 42, 0.85);
+    }
+
+    .explanation-title {
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .explanation-card.correct-expl .explanation-title {
+      color: var(--correct-green-light);
+    }
+
+    .explanation-card.wrong-expl .explanation-title {
+      color: var(--correct-green-light);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Action Footer */
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .hint-label {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hint-label kbd {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .btn-next {
+      background: linear-gradient(135deg, var(--accent-indigo), #4338CA);
+      color: #ffffff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: var(--radius-md);
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px var(--accent-indigo-glow);
+    }
+
+    .btn-next:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px var(--accent-indigo-glow);
+    }
+
+    .btn-next:active {
+      transform: translateY(0);
+    }
+
+    /* Modal Reference Sheet */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-sheet {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 780px;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
+      animation: modalScale 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes modalScale {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .modal-header h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .modal-search {
+      padding: 12px 24px;
+      border-bottom: 1px solid var(--border-subtle);
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .search-input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 10px 16px;
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .search-input:focus {
+      border-color: var(--accent-indigo);
+    }
+
+    .modal-body {
+      padding: 16px 24px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .sheet-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      gap: 16px;
+    }
+
+    .sheet-desc {
+      font-size: 0.88rem;
+      color: var(--text-main);
+    }
+
+    .sheet-cat {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .btn-close {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 6px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-close:hover {
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 640px) {
+      .stats-hud {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .quiz-card {
+        padding: 20px;
+      }
+      .question-prompt {
+        font-size: 1.15rem;
+      }
+      .option-btn {
+        padding: 14px 16px;
+      }
+      header {
+        padding: 14px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header>
+      <div class="brand-group">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <div class="brand-title">
+          <h1>Antigravity Shortcuts Mastery</h1>
+          <p>NotebookLM Spaced Reinforcement Quiz</p>
+        </div>
+      </div>
+
+      <div class="header-controls">
+        <!-- Platform Switcher -->
+        <div class="btn-toggle-group" id="platformToggle">
+          <button class="toggle-option active" data-platform="win">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h11v11H0zM13 0h11v11H13zM0 13h11v11H0zM13 13h11v11H13z"/></svg>
+            Win / Linux
+          </button>
+          <button class="toggle-option" data-platform="mac">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.75 1.04-1.8 0.92-2.85-.9.04-2.02.61-2.67 1.36-.57.65-1.07 1.7-0.93 2.73 1.01.08 2.06-.5 2.68-1.24z"/></svg>
+            macOS
+          </button>
+        </div>
+
+        <!-- Reference Sheet Button -->
+        <button class="icon-btn" id="openSheetBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15z"/></svg>
+          Cheat Sheet
+        </button>
+
+        <!-- Sound Toggle -->
+        <button class="icon-btn" id="soundToggleBtn" title="Toggle Sound Feedback">
+          <span id="soundIcon">🔊</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Stats HUD -->
+    <div class="stats-hud">
+      <div class="stat-pill">
+        <span class="stat-label">Streak</span>
+        <div class="stat-value">
+          <span id="streakCount">0</span>
+          <span class="streak-fire">🔥</span>
+        </div>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-label">Accuracy</span>
+        <div class="stat-value">
+          <span id="accuracyVal">100%</span>
+        </div>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-label">Mastered</span>
+        <div class="stat-value">
+          <span id="masteredCount">0</span>
+          <span style="font-size: 0.8rem; color: var(--text-dim);">/ 30</span>
+        </div>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-label">Loop Phase</span>
+        <div class="stat-value">
+          <span id="loopCycle" style="font-size: 1.05rem; color: #818CF8;">Round 1</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category Filter Chips -->
+    <div class="filter-bar" id="categoryChips">
+      <button class="filter-chip active" data-cat="all">All Topics (30)</button>
+      <button class="filter-chip" data-cat="editor">Editor & Code Lenses</button>
+      <button class="filter-chip" data-cat="chat">Agent Chat & Canvas</button>
+      <button class="filter-chip" data-cat="slash">Slash Commands</button>
+      <button class="filter-chip" data-cat="cli">Antigravity CLI</button>
+      <button class="filter-chip" data-cat="context">Context & @ Mentions</button>
+    </div>
+
+    <!-- Active Quiz Card -->
+    <main class="quiz-card" id="quizCard">
+      <!-- Progress Bar -->
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <!-- Question Meta -->
+      <div class="question-meta">
+        <span class="category-badge" id="categoryBadge">EDITOR MODALITY</span>
+        <span class="question-counter" id="questionCounter">QUESTION 1 / 30</span>
+      </div>
+
+      <!-- Question Prompt Area -->
+      <div id="promptContainer">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- MCQ Options Grid -->
+      <div class="options-grid" id="optionsGrid">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- NotebookLM Style Rationale Dropdown -->
+      <div class="explanation-card" id="explanationCard">
+        <div class="explanation-title" id="explanationTitle">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          EXPLANATION & SHORTCUT RATIONALE
+        </div>
+        <p id="explanationText"></p>
+      </div>
+
+      <!-- Card Footer -->
+      <div class="card-footer">
+        <div class="hint-label">
+          <span>Shortcuts:</span>
+          <kbd>1</kbd>-<kbd>4</kbd> to answer &bull; <kbd>Space</kbd> or <kbd>Enter</kbd> next
+        </div>
+        <button class="btn-next" id="nextBtn" style="display: none;">
+          Next Question
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </main>
+  </div>
+
+  <!-- Reference Cheat Sheet Modal -->
+  <div class="modal-backdrop" id="sheetModal">
+    <div class="modal-sheet">
+      <div class="modal-header">
+        <h2>Antigravity Complete Shortcut Glossary</h2>
+        <button class="btn-close" id="closeSheetBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="modal-search">
+        <input type="text" class="search-input" id="sheetSearchInput" placeholder="Filter by shortcut, command, or action (e.g., plan, tab, exit, inline)...">
+      </div>
+      <div class="modal-body" id="sheetListContainer">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* ============================================================ */
+    /* ANTIGRAVITY MASTER SHORTCUTS DATASET                          */
+    /* ============================================================ */
+
+    const SHORTCUTS_DATA = [
+  {
+    "id": "inline-edit",
+    "category": "editor",
+    "categoryLabel": "Editor Modality",
+    "winKeys": [
+      "Ctrl",
+      "I"
+    ],
+    "macKeys": [
+      "⌘",
+      "I"
+    ],
+    "action": "Trigger Inline AI Command / Refactor",
+    "description": "Opens the instructive inline editing modal directly over highlighted code or generates net-new code at cursor.",
+    "rationale": "Ctrl+I (Cmd+I) is the primary inline instruction shortcut in Antigravity for localized, in-place edits and refactoring."
+  },
+  {
+    "id": "tab-complete",
+    "category": "editor",
+    "categoryLabel": "Editor Modality",
+    "winKeys": [
+      "Tab"
+    ],
+    "macKeys": [
+      "Tab"
+    ],
+    "action": "Accept Autocomplete / Supercomplete Diff",
+    "description": "Accepts full inline AI code suggestion, navigates to the predicted jump point, or auto-inserts missing imports.",
+    "rationale": "Tab routes next-intent prediction: autocomplete suggestions, larger Supercomplete diffs, and Tab-to-Jump navigation."
+  },
+  {
+    "id": "tab-word-accept",
+    "category": "editor",
+    "categoryLabel": "Editor Modality",
+    "winKeys": [
+      "Ctrl",
+      "→"
+    ],
+    "macKeys": [
+      "⌘",
+      "→"
+    ],
+    "action": "Accept Autocomplete Suggestion Word-by-Word",
+    "description": "Partially accepts an inline suggestion token by token instead of committing the entire multi-line block.",
+    "rationale": "Use Ctrl+Right Arrow (Cmd+Right Arrow) when you only want the beginning of an AI completion."
+  },
+  {
+    "id": "dismiss-prompt",
+    "category": "editor",
+    "categoryLabel": "Editor Modality",
+    "winKeys": [
+      "Esc"
+    ],
+    "macKeys": [
+      "Esc"
+    ],
+    "action": "Dismiss Autocomplete / Close Inline Modal",
+    "description": "Cancels current active AI autocomplete suggestion or closes the active inline command dialog.",
+    "rationale": "Escape universally dismisses transient AI overlays, floating supercomplete widgets, and inline edit inputs."
+  },
+  {
+    "id": "code-lenses",
+    "category": "editor",
+    "categoryLabel": "Editor Canvas",
+    "winKeys": [
+      "Code",
+      "Lens"
+    ],
+    "macKeys": [
+      "Code",
+      "Lens"
+    ],
+    "action": "Trigger Target Actions via Inline Code Lenses",
+    "description": "Clickable action buttons appearing above functions and classes for instant 'Explain', 'Refactor', or 'Write Tests'.",
+    "rationale": "Code Lenses are contextual in-editor triggers placed directly above code symbols for one-click agent operations."
+  },
+  {
+    "id": "diff-overlay",
+    "category": "editor",
+    "categoryLabel": "Editor Canvas",
+    "winKeys": [
+      "Alt",
+      "F5"
+    ],
+    "macKeys": [
+      "⌥",
+      "F5"
+    ],
+    "action": "Navigate to Next Diff Chunk in Agent Review",
+    "description": "Jumps between proposed additions/deletions in the inline red/green visual diff review overlay.",
+    "rationale": "Visual Diff Overlays inside the editor canvas let you inspect, jump between chunks, and selectively accept changes."
+  },
+  {
+    "id": "open-chat",
+    "category": "chat",
+    "categoryLabel": "Agent Chat & Canvas",
+    "winKeys": [
+      "Ctrl",
+      "L"
+    ],
+    "macKeys": [
+      "⌘",
+      "L"
+    ],
+    "action": "Open / Focus Sidebar Agent Chat",
+    "description": "Focuses the primary Antigravity chat input pane to ask architectural questions, review code, or delegate tasks.",
+    "rationale": "Ctrl+L (Cmd+L) immediately toggles or places your cursor inside the agent conversation panel."
+  },
+  {
+    "id": "new-chat",
+    "category": "chat",
+    "categoryLabel": "Agent Chat & Canvas",
+    "winKeys": [
+      "Ctrl",
+      "N"
+    ],
+    "macKeys": [
+      "⌘",
+      "N"
+    ],
+    "action": "Start a New Chat Session / Conversation",
+    "description": "Wipes conversational state and spins up a pristine, fresh context window for a brand-new task or inquiry.",
+    "rationale": "Ctrl+N (Cmd+N) creates an isolated conversation branch, keeping context clean and tokens focused."
+  },
+  {
+    "id": "toggle-aux",
+    "category": "aux",
+    "categoryLabel": "Auxiliary Pane",
+    "winKeys": [
+      "Ctrl",
+      "Shift",
+      "L"
+    ],
+    "macKeys": [
+      "⌘",
+      "Shift",
+      "L"
+    ],
+    "action": "Toggle Agent Auxiliary Pane (Artifacts & Tasks)",
+    "description": "Expands or collapses the side panel displaying active background subagents, task logs, terminals, and artifacts.",
+    "rationale": "Ctrl+Shift+L (Cmd+Shift+L) opens the auxiliary sidecar where background jobs and artifact reports reside."
+  },
+  {
+    "id": "slash-plan",
+    "category": "slash",
+    "categoryLabel": "Slash Commands",
+    "winKeys": [
+      "/plan"
+    ],
+    "macKeys": [
+      "/plan"
+    ],
+    "action": "Activate Planning Mode (Mandatory Design Review)",
+    "description": "Instructs the agent to pause, draft an implementation plan artifact, and await user approval before editing files.",
+    "rationale": "/plan is the command to ensure deep architectural alignment and plan approval before writing code."
+  },
+  {
+    "id": "slash-goal",
+    "category": "slash",
+    "categoryLabel": "Slash Commands",
+    "winKeys": [
+      "/goal"
+    ],
+    "macKeys": [
+      "/goal"
+    ],
+    "action": "Launch Autonomous Goal Mode",
+    "description": "Directs the agent to run continuously in an autonomous loop until the objective is 100% verified and achieved.",
+    "rationale": "/goal triggers long-running autonomous execution without premature stoppage or unnecessary check-ins."
+  },
+  {
+    "id": "slash-schedule",
+    "category": "slash",
+    "categoryLabel": "Slash Commands",
+    "winKeys": [
+      "/schedule"
+    ],
+    "macKeys": [
+      "/schedule"
+    ],
+    "action": "Set Recurring Cron Job or Delayed Timer",
+    "description": "Schedules a one-shot notification timer or 5-field cron expression to monitor deployments or run routines.",
+    "rationale": "/schedule configures background recurring heartbeats or reminders for the agent."
+  },
+  {
+    "id": "slash-grill-me",
+    "category": "slash",
+    "categoryLabel": "Slash Commands",
+    "winKeys": [
+      "/grill-me"
+    ],
+    "macKeys": [
+      "/grill-me"
+    ],
+    "action": "Interactive Design & Architecture Interview",
+    "description": "Causes the agent to aggressively interview the developer with targeted questions to resolve ambiguities.",
+    "rationale": "/grill-me is used when you want the agent to interrogate you on trade-offs before locking in a spec."
+  },
+  {
+    "id": "slash-learn",
+    "category": "slash",
+    "categoryLabel": "Slash Commands",
+    "winKeys": [
+      "/learn"
+    ],
+    "macKeys": [
+      "/learn"
+    ],
+    "action": "Capture & Persist Solution to Custom Rules",
+    "description": "Distills a newly discovered debugging fix or workflow resolution into permanent workspace rules or skills.",
+    "rationale": "/learn tells the agent to extract the lesson from the current trajectory and persist it for future sessions."
+  },
+  {
+    "id": "slash-clear",
+    "category": "slash",
+    "categoryLabel": "Slash Commands",
+    "winKeys": [
+      "/clear"
+    ],
+    "macKeys": [
+      "/clear"
+    ],
+    "action": "Reset / Clear Chat Viewport",
+    "description": "Clears visual transcript clutter from the active chat panel while maintaining agent trajectory memory.",
+    "rationale": "/clear resets the visual chat interface for a tidy workspace."
+  },
+  {
+    "id": "mention-menu",
+    "category": "context",
+    "categoryLabel": "Context & Mentions",
+    "winKeys": [
+      "@"
+    ],
+    "macKeys": [
+      "@"
+    ],
+    "action": "Open Context Mention Menu",
+    "description": "Pulls up the contextual attachment picker to reference files, symbols, docs, terminals, and subagents.",
+    "rationale": "Typing @ anywhere in prompt input opens the context ingestion popup."
+  },
+  {
+    "id": "mention-file",
+    "category": "context",
+    "categoryLabel": "Context & Mentions",
+    "winKeys": [
+      "@",
+      "File"
+    ],
+    "macKeys": [
+      "@",
+      "File"
+    ],
+    "action": "Attach Specific File Context to Prompt",
+    "description": "Feeds the exact contents and path of a local project file directly into the model's context window.",
+    "rationale": "@file (or @<filename>) pins a specific file as ground truth for code generation."
+  },
+  {
+    "id": "mention-mcp",
+    "category": "context",
+    "categoryLabel": "Context & Mentions",
+    "winKeys": [
+      "@",
+      "Tool"
+    ],
+    "macKeys": [
+      "@",
+      "Tool"
+    ],
+    "action": "Reference Model Context Protocol (MCP) Tool",
+    "description": "Explicitly binds an external MCP server capability or resource into the agent invocation.",
+    "rationale": "@tool or @mcp directs the model to prioritize a registered MCP extension."
+  },
+  {
+    "id": "mention-terminal",
+    "category": "context",
+    "categoryLabel": "Context & Mentions",
+    "winKeys": [
+      "@",
+      "Terminal"
+    ],
+    "macKeys": [
+      "@",
+      "Terminal"
+    ],
+    "action": "Attach Active Terminal Output to Context",
+    "description": "Captures standard output, error traces, and active logs from the integrated terminal directly into prompt.",
+    "rationale": "@terminal allows the AI to immediately see error stacks without manual copy-pasting."
+  },
+  {
+    "id": "cli-launch",
+    "category": "cli",
+    "categoryLabel": "Antigravity CLI",
+    "winKeys": [
+      "agy"
+    ],
+    "macKeys": [
+      "agy"
+    ],
+    "action": "Launch Antigravity CLI Terminal Interface",
+    "description": "Spins up the interactive terminal-based Antigravity developer shell from bash, PowerShell, or zsh.",
+    "rationale": "The 'agy' binary command is the core terminal executable for headless or shell-based agent workflows."
+  },
+  {
+    "id": "cli-exit-key",
+    "category": "cli",
+    "categoryLabel": "Antigravity CLI",
+    "winKeys": [
+      "Ctrl+D",
+      "Ctrl+D"
+    ],
+    "macKeys": [
+      "Ctrl+D",
+      "Ctrl+D"
+    ],
+    "action": "Fast Double-Keystroke Exit from CLI",
+    "description": "Immediately and cleanly disconnects from the interactive CLI session back to standard terminal prompt.",
+    "rationale": "Double Ctrl+D is the universal fast terminal escape sequence in the agy CLI."
+  },
+  {
+    "id": "cli-exit-cmd",
+    "category": "cli",
+    "categoryLabel": "Antigravity CLI",
+    "winKeys": [
+      "/exit"
+    ],
+    "macKeys": [
+      "/exit"
+    ],
+    "action": "Text Command to Terminate CLI Session",
+    "description": "Gracefully quits the agy command-line environment and saves execution state.",
+    "rationale": "Typing /exit or /quit inside agy terminal cleanly exits the session."
+  },
+  {
+    "id": "cli-help",
+    "category": "cli",
+    "categoryLabel": "Antigravity CLI",
+    "winKeys": [
+      "agy",
+      "--help"
+    ],
+    "macKeys": [
+      "agy",
+      "--help"
+    ],
+    "action": "Display All CLI Subcommands and Flags",
+    "description": "Prints full usage syntax, subcommands, model flags, and customization options for the Antigravity CLI.",
+    "rationale": "agy --help lists all available options, parameters, and global commands."
+  },
+  {
+    "id": "toggle-terminal",
+    "category": "editor",
+    "categoryLabel": "Editor Canvas",
+    "winKeys": [
+      "Ctrl",
+      "`"
+    ],
+    "macKeys": [
+      "⌘",
+      "`"
+    ],
+    "action": "Toggle Integrated Terminal",
+    "description": "Toggles the bottom integrated PowerShell, Command Prompt, or bash terminal panel inside the IDE.",
+    "rationale": "Ctrl+` (Cmd+`) is the standard shortcut to show or hide the terminal pane."
+  },
+  {
+    "id": "quick-open",
+    "category": "editor",
+    "categoryLabel": "Editor Canvas",
+    "winKeys": [
+      "Ctrl",
+      "P"
+    ],
+    "macKeys": [
+      "⌘",
+      "P"
+    ],
+    "action": "Quick Open File Search",
+    "description": "Instantly searches and opens any file across the workspace by typing its relative name or fuzzy match.",
+    "rationale": "Ctrl+P (Cmd+P) launches fuzzy file finder navigation."
+  },
+  {
+    "id": "cmd-palette",
+    "category": "editor",
+    "categoryLabel": "Editor Canvas",
+    "winKeys": [
+      "Ctrl",
+      "Shift",
+      "P"
+    ],
+    "macKeys": [
+      "⌘",
+      "Shift",
+      "P"
+    ],
+    "action": "Open Full Command Palette",
+    "description": "Accesses every IDE command, agent setting, extension action, and configuration option.",
+    "rationale": "Ctrl+Shift+P (Cmd+Shift+P) launches the universal Command Palette."
+  },
+  {
+    "id": "split-editor",
+    "category": "editor",
+    "categoryLabel": "Editor Canvas",
+    "winKeys": [
+      "Ctrl",
+      "\\"
+    ],
+    "macKeys": [
+      "⌘",
+      "\\"
+    ],
+    "action": "Split Editor Pane Side-by-Side",
+    "description": "Divides active editor into two horizontal or vertical columns for comparative viewing and coding.",
+    "rationale": "Ctrl+\\ (Cmd+\\) splits the editor layout into multiple active panes."
+  },
+  {
+    "id": "toggle-sidebar",
+    "category": "editor",
+    "categoryLabel": "Editor Canvas",
+    "winKeys": [
+      "Ctrl",
+      "B"
+    ],
+    "macKeys": [
+      "⌘",
+      "B"
+    ],
+    "action": "Toggle Primary Sidebar",
+    "description": "Shows or hides the main left navigation bar (File Explorer, Git Source Control, Extensions).",
+    "rationale": "Ctrl+B (Cmd+B) maximizes editor workspace by toggling the primary sidebar."
+  },
+  {
+    "id": "global-search",
+    "category": "editor",
+    "categoryLabel": "Editor Canvas",
+    "winKeys": [
+      "Ctrl",
+      "Shift",
+      "F"
+    ],
+    "macKeys": [
+      "⌘",
+      "Shift",
+      "F"
+    ],
+    "action": "Global Workspace Search",
+    "description": "Performs regex or literal text pattern search across every indexed file and folder in the project.",
+    "rationale": "Ctrl+Shift+F (Cmd+Shift+F) opens the global search and replace drawer."
+  },
+  {
+    "id": "jump-definition",
+    "category": "editor",
+    "categoryLabel": "Editor Canvas",
+    "winKeys": [
+      "F12"
+    ],
+    "macKeys": [
+      "F12"
+    ],
+    "action": "Go to Symbol Definition",
+    "description": "Immediately navigates the active editor directly to where a function, variable, or class is declared.",
+    "rationale": "F12 jumps directly to source definition across the language server."
+  }
+];
+
+    /* ============================================================ */
+    /* STATE MANAGEMENT                                             */
+    /* ============================================================ */
+
+    const state = {
+      platform: localStorage.getItem('ag_platform') || 'win',
+      soundEnabled: localStorage.getItem('ag_sound') !== 'false',
+      activeCategory: 'all',
+      filteredPool: [],
+      currentIndex: 0,
+      roundNumber: 1,
+      streak: 0,
+      totalAnswered: 0,
+      totalCorrect: 0,
+      masteredIds: new Set(JSON.parse(localStorage.getItem('ag_mastered') || '[]')),
+      currentQuestion: null,
+      hasAnswered: false,
+      autoAdvanceTimer: null
+    };
+
+    /* Web Audio Sound Synthesizer */
+    let audioCtx = null;
+    function getAudioContext() {
+      if (!audioCtx && (window.AudioContext || window.webkitAudioContext)) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function playSound(type) {
+      if (!state.soundEnabled) return;
+      const ctx = getAudioContext();
+      if (!ctx) return;
+
+      const now = ctx.currentTime;
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      if (type === 'correct') {
+        // High harmonic sparkle chime
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(587.33, now); // D5
+        osc.frequency.exponentialRampToValueAtTime(880.00, now + 0.12); // A5
+        gain.gain.setValueAtTime(0.18, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+        osc.start(now);
+        osc.stop(now + 0.35);
+      } else if (type === 'wrong') {
+        // Low subdued feedback click
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(220, now);
+        osc.frequency.linearRampToValueAtTime(140, now + 0.15);
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
+        osc.start(now);
+        osc.stop(now + 0.2);
+      }
+    }
+
+    /* Helper: Format Keys for Platform */
+    function formatKeyHtml(key) {
+      return `<kbd class="tactile-key">${key}</kbd>`;
+    }
+
+    function getPlatformKeys(item) {
+      return state.platform === 'mac' ? item.macKeys : item.winKeys;
+    }
+
+    function renderKeysGroupHtml(keysArray) {
+      return keysArray.map(k => formatKeyHtml(k)).join('<span class="keys-plus">+</span>');
+    }
+
+    /* ============================================================ */
+    /* QUESTION GENERATION ENGINE (Bidirectional Variations)        */
+    /* ============================================================ */
+
+    function generateQuestions() {
+      let pool = [];
+
+      // Filter by category if not 'all'
+      const baseItems = (state.activeCategory === 'all') 
+        ? SHORTCUTS_DATA 
+        : SHORTCUTS_DATA.filter(item => item.category === state.activeCategory);
+
+      baseItems.forEach(item => {
+        const keysFormatted = getPlatformKeys(item);
+
+        // Variation A: "What does [Keys] do in Antigravity?"
+        pool.push({
+          type: 'key-to-action',
+          item: item,
+          promptText: `What does the following shortcut execute in Antigravity?`,
+          keysShowcase: keysFormatted,
+          correctAnswer: item.action,
+          distractorGetter: (other) => other.action
+        });
+
+        // Variation B: "Which shortcut executes [Action]?"
+        pool.push({
+          type: 'action-to-key',
+          item: item,
+          promptText: `Which Antigravity shortcut executes: <span style="color:#A5B4FC;">"${item.action}"</span>?`,
+          keysShowcase: null,
+          correctAnswer: keysFormatted.join(' + '),
+          distractorGetter: (other) => getPlatformKeys(other).join(' + ')
+        });
+      });
+
+      // Fisher-Yates Shuffle
+      for (let i = pool.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [pool[i], pool[j]] = [pool[j], pool[i]];
+      }
+
+      state.filteredPool = pool;
+      state.currentIndex = 0;
+    }
+
+    /* Build 4 MCQ Options */
+    function buildOptions(q) {
+      const correct = q.correctAnswer;
+      const choices = [correct];
+
+      // Pool of possible distractors from entire dataset
+      const otherItems = SHORTCUTS_DATA.filter(it => it.id !== q.item.id);
+      
+      // Shuffle other items to pick 3 random distractors
+      const shuffledOthers = [...otherItems].sort(() => 0.5 - Math.random());
+
+      for (let other of shuffledOthers) {
+        const distractor = q.distractorGetter(other);
+        if (distractor && !choices.includes(distractor)) {
+          choices.push(distractor);
+        }
+        if (choices.length === 4) break;
+      }
+
+      // Shuffle choices so correct answer position is randomized
+      for (let i = choices.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [choices[i], choices[j]] = [choices[j], choices[i]];
+      }
+
+      return choices;
+    }
+
+    /* ============================================================ */
+    /* UI RENDERING                                                 */
+    /* ============================================================ */
+
+    const elPromptContainer = document.getElementById('promptContainer');
+    const elOptionsGrid = document.getElementById('optionsGrid');
+    const elCategoryBadge = document.getElementById('categoryBadge');
+    const elQuestionCounter = document.getElementById('questionCounter');
+    const elProgressFill = document.getElementById('progressFill');
+    const elExplanationCard = document.getElementById('explanationCard');
+    const elExplanationTitle = document.getElementById('explanationTitle');
+    const elExplanationText = document.getElementById('explanationText');
+    const elNextBtn = document.getElementById('nextBtn');
+    const elStreakCount = document.getElementById('streakCount');
+    const elAccuracyVal = document.getElementById('accuracyVal');
+    const elMasteredCount = document.getElementById('masteredCount');
+    const elLoopCycle = document.getElementById('loopCycle');
+
+    function renderCurrentQuestion() {
+      clearTimeout(state.autoAdvanceTimer);
+      state.hasAnswered = false;
+
+      // Handle loop cycling
+      if (state.currentIndex >= state.filteredPool.length) {
+        state.roundNumber++;
+        generateQuestions();
+      }
+
+      const q = state.filteredPool[state.currentIndex];
+      state.currentQuestion = q;
+      const item = q.item;
+
+      // Update Meta
+      elCategoryBadge.textContent = item.categoryLabel.toUpperCase();
+      elQuestionCounter.textContent = `QUESTION ${state.currentIndex + 1} / ${state.filteredPool.length}`;
+      
+      const pct = Math.round(((state.currentIndex) / state.filteredPool.length) * 100);
+      elProgressFill.style.width = `${pct}%`;
+
+      elLoopCycle.textContent = `Round ${state.roundNumber}`;
+
+      // Reset Explanations & Next Button
+      elExplanationCard.className = 'explanation-card';
+      elNextBtn.style.display = 'none';
+
+      // Render Prompt
+      let promptHtml = `<div class="question-prompt">${q.promptText}</div>`;
+      if (q.keysShowcase) {
+        promptHtml += `<div class="keys-showcase">${renderKeysGroupHtml(q.keysShowcase)}</div>`;
+      }
+      elPromptContainer.innerHTML = promptHtml;
+
+      // Build & Render Options
+      const choices = buildOptions(q);
+      const letters = ['A', 'B', 'C', 'D'];
+
+      elOptionsGrid.innerHTML = choices.map((choice, idx) => {
+        // If choice is formatted as keys (e.g. "Ctrl + I"), render as tactile keys
+        let choiceDisplay = choice;
+        if (q.type === 'action-to-key') {
+          const keys = choice.split(' + ');
+          choiceDisplay = renderKeysGroupHtml(keys);
+        }
+
+        return `
+          <button class="option-btn" data-value="${escapeHtml(choice)}" data-index="${idx}" id="opt-${idx}">
+            <div class="option-content">
+              <span class="option-letter">${letters[idx]}</span>
+              <span class="option-text">${choiceDisplay}</span>
+            </div>
+            <div class="option-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <path class="icon-path" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+          </button>
+        `;
+      }).join('');
+
+      // Attach click events
+      document.querySelectorAll('.option-btn').forEach(btn => {
+        btn.addEventListener('click', () => handleChoiceSelection(btn));
+      });
+    }
+
+    function escapeHtml(string) {
+      return String(string).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    /* ============================================================ */
+    /* NOTEBOOKLM-STYLE INSTANT REINFORCEMENT LOGIC                 */
+    /* ============================================================ */
+
+    function handleChoiceSelection(selectedBtn) {
+      if (state.hasAnswered) return;
+      state.hasAnswered = true;
+
+      const selectedValue = selectedBtn.getAttribute('data-value');
+      const correctValue = state.currentQuestion.correctAnswer;
+      const isCorrect = (selectedValue === correctValue);
+
+      state.totalAnswered++;
+      if (isCorrect) {
+        state.totalCorrect++;
+        state.streak++;
+        state.masteredIds.add(state.currentQuestion.item.id);
+        localStorage.setItem('ag_mastered', JSON.stringify([...state.masteredIds]));
+      } else {
+        state.streak = 0;
+      }
+
+      updateStatsHUD();
+
+      // Disable all option buttons
+      const allButtons = document.querySelectorAll('.option-btn');
+      allButtons.forEach(btn => {
+        btn.disabled = true;
+      });
+
+      if (isCorrect) {
+        // CORRECT: Green celebration
+        playSound('correct');
+        selectedBtn.classList.add('state-correct');
+        allButtons.forEach(b => {
+          if (b !== selectedBtn) b.classList.add('dimmed');
+        });
+
+        elExplanationCard.className = 'explanation-card correct-expl show';
+        elExplanationTitle.innerHTML = `
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+          EXACT MATCH &bull; SHORTCUT MEMORIZED
+        `;
+        elExplanationText.textContent = state.currentQuestion.item.rationale;
+
+      } else {
+        // WRONG: INSTANT NOTEBOOKLM FEEDBACK
+        // 1. Play feedback sound
+        playSound('wrong');
+
+        // 2. Mark the selected button as wrong (flashes red/shakes)
+        selectedBtn.classList.add('state-wrong');
+        selectedBtn.querySelector('.icon-path').setAttribute('d', 'M6 18L18 6M6 6l12 12');
+
+        // 3. INSTANTLY REVEAL THE CORRECT ANSWER in Glowing Emerald Green!
+        allButtons.forEach(btn => {
+          if (btn.getAttribute('data-value') === correctValue) {
+            btn.classList.add('state-reveal-correct');
+            btn.querySelector('.icon-path').setAttribute('d', 'M5 13l4 4L19 7');
+          } else if (btn !== selectedBtn) {
+            btn.classList.add('dimmed');
+          }
+        });
+
+        // 4. Show explanation card with clear green accent
+        elExplanationCard.className = 'explanation-card wrong-expl show';
+        elExplanationTitle.innerHTML = `
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="3"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          KEY REINFORCEMENT: NOTICE THE CORRECT SHORTCUT
+        `;
+        elExplanationText.innerHTML = `
+          <strong>Correct Answer:</strong> ${escapeHtml(correctValue)}<br>
+          <span style="color: #CBD5E1; margin-top: 4px; display: inline-block;">${state.currentQuestion.item.rationale}</span>
+        `;
+      }
+
+      // Show Next Button
+      elNextBtn.style.display = 'flex';
+      elNextBtn.focus();
+    }
+
+    function advanceToNextQuestion() {
+      state.currentIndex++;
+      renderCurrentQuestion();
+    }
+
+    function updateStatsHUD() {
+      elStreakCount.textContent = state.streak;
+      const acc = state.totalAnswered > 0 
+        ? Math.round((state.totalCorrect / state.totalAnswered) * 100) 
+        : 100;
+      elAccuracyVal.textContent = `${acc}%`;
+      elMasteredCount.textContent = state.masteredIds.size;
+    }
+
+    /* ============================================================ */
+    /* CHEAT SHEET GLOSSARY                                         */
+    /* ============================================================ */
+
+    const elSheetModal = document.getElementById('sheetModal');
+    const elOpenSheetBtn = document.getElementById('openSheetBtn');
+    const elCloseSheetBtn = document.getElementById('closeSheetBtn');
+    const elSheetSearchInput = document.getElementById('sheetSearchInput');
+    const elSheetListContainer = document.getElementById('sheetListContainer');
+
+    function renderCheatSheet(filterQuery = '') {
+      const q = filterQuery.toLowerCase().trim();
+      const filtered = SHORTCUTS_DATA.filter(it => {
+        const keysText = (state.platform === 'mac' ? it.macKeys : it.winKeys).join(' ').toLowerCase();
+        return it.action.toLowerCase().includes(q) ||
+               it.description.toLowerCase().includes(q) ||
+               it.categoryLabel.toLowerCase().includes(q) ||
+               keysText.includes(q);
+      });
+
+      if (filtered.length === 0) {
+        elSheetListContainer.innerHTML = `<div style="text-align:center; padding: 24px; color: var(--text-dim);">No shortcuts match "${escapeHtml(filterQuery)}"</div>`;
+        return;
+      }
+
+      elSheetListContainer.innerHTML = filtered.map(it => {
+        const keys = state.platform === 'mac' ? it.macKeys : it.winKeys;
+        return `
+          <div class="sheet-row">
+            <div>
+              <div class="sheet-cat">${it.categoryLabel}</div>
+              <div class="sheet-desc"><strong>${it.action}</strong>: ${it.description}</div>
+            </div>
+            <div>
+              ${renderKeysGroupHtml(keys)}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    elOpenSheetBtn.addEventListener('click', () => {
+      renderCheatSheet(elSheetSearchInput.value);
+      elSheetModal.classList.add('open');
+      elSheetSearchInput.focus();
+    });
+
+    elCloseSheetBtn.addEventListener('click', () => {
+      elSheetModal.classList.remove('open');
+    });
+
+    elSheetModal.addEventListener('click', (e) => {
+      if (e.target === elSheetModal) {
+        elSheetModal.classList.remove('open');
+      }
+    });
+
+    elSheetSearchInput.addEventListener('input', (e) => {
+      renderCheatSheet(e.target.value);
+    });
+
+    /* ============================================================ */
+    /* CONTROLS & EVENT LISTENERS                                   */
+    /* ============================================================ */
+
+    // Platform switcher
+    document.querySelectorAll('.toggle-option').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.toggle-option').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        state.platform = btn.getAttribute('data-platform');
+        localStorage.setItem('ag_platform', state.platform);
+        generateQuestions();
+        renderCurrentQuestion();
+        if (elSheetModal.classList.contains('open')) {
+          renderCheatSheet(elSheetSearchInput.value);
+        }
+      });
+    });
+
+    // Category filter chips
+    document.querySelectorAll('.filter-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        state.activeCategory = chip.getAttribute('data-cat');
+        state.roundNumber = 1;
+        generateQuestions();
+        renderCurrentQuestion();
+      });
+    });
+
+    // Sound toggle
+    const elSoundToggleBtn = document.getElementById('soundToggleBtn');
+    const elSoundIcon = document.getElementById('soundIcon');
+    elSoundToggleBtn.addEventListener('click', () => {
+      state.soundEnabled = !state.soundEnabled;
+      localStorage.setItem('ag_sound', state.soundEnabled);
+      elSoundIcon.textContent = state.soundEnabled ? '🔊' : '🔇';
+    });
+
+    // Next question button
+    elNextBtn.addEventListener('click', advanceToNextQuestion);
+
+    // Keyboard Shortcuts (1-4 for answers, Space / Enter for next)
+    window.addEventListener('keydown', (e) => {
+      if (elSheetModal.classList.contains('open')) {
+        if (e.key === 'Escape') elSheetModal.classList.remove('open');
+        return;
+      }
+
+      if (!state.hasAnswered) {
+        if (['1', '2', '3', '4'].includes(e.key)) {
+          const idx = parseInt(e.key, 10) - 1;
+          const targetBtn = document.getElementById(`opt-${idx}`);
+          if (targetBtn) targetBtn.click();
+        }
+      } else {
+        if (e.key === ' ' || e.key === 'Enter') {
+          e.preventDefault();
+          advanceToNextQuestion();
+        }
+      }
+    });
+
+    /* ============================================================ */
+    /* INITIALIZATION                                               */
+    /* ============================================================ */
+
+    // Restore platform button active state
+    document.querySelectorAll('.toggle-option').forEach(b => {
+      b.classList.toggle('active', b.getAttribute('data-platform') === state.platform);
+    });
+    elSoundIcon.textContent = state.soundEnabled ? '🔊' : '🔇';
+
+    generateQuestions();
+    updateStatsHUD();
+    renderCurrentQuestion();
+  </script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(err => {
+          console.debug('[PWA] SW register notice:', err);
+        });
+      });
+    }
+  </script>
+</body>
+</html>

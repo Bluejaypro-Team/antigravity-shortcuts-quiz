@@ -1,0 +1,31 @@
+{
+  "name": "antigravity-shortcuts-quiz",
+  "version": "1.2.0",
+  "description": "Interactive NotebookLM-style MCQ learning quiz web application for mastering Google Antigravity shortcuts, keybindings, and CLI workflows.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node scripts/issue_tracker.js",
+    "audit": "node scripts/issue_tracker.js --verbose",
+    "autofix": "node scripts/issue_tracker.js --fix",
+    "sync": "node scripts/issue_tracker.js --sync",
+    "deploy:firebase": "firebase deploy --only hosting"
+  },
+  "keywords": [
+    "antigravity",
+    "gemini",
+    "shortcuts",
+    "quiz",
+    "spaced-repetition",
+    "notebooklm",
+    "pwa",
+    "keyboard-mastery"
+  ],
+  "author": "Antigravity Engineering Pair",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bluejaypro-Team/antigravity-shortcuts-quiz.git"
+  }
+}
